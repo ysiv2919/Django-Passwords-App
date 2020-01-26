@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        {% load static %}
+        <title>Passwords | Home</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'libraries/materialize.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="{% static 'libraries/materialize.js' %}"></script>
+    </head>
+    <body>
+        <div class="navbar-fixed">
+            <nav class="black">
+                <div class="nav-wrapper container">
+                    <a class="brand-logo center">Passwords</a>
+                    <ul class="right">
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container col s12">
+            <br>
+            <div class="row">
+                <ul class="collection with-header">
+                    <li class="collection-header">
+                        <h4>Passwords</h4>
+                    </li>
+                    {% for password in passwords %}
+                    <li class="collection-item">
+                        {{ password.site }}: {{ password.password }}
+                        <a href="/delete-password/{{ password.pk }}" class="secondary-content"><i class="material-icons red-text">clear</i></a>
+                    </li>
+                    {% endfor %}
+                    <a class="collection-item center col s12" href="/new-password">New Password</a>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

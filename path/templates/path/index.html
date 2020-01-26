@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        {% load static %}
+        <title>Passwords</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'libraries/materialize.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="{% static 'libraries/materialize.js' %}"></script>
+    </head>
+    <body>
+        <div class="navbar-fixed">
+            <nav class="black">
+                <div class="nav-wrapper">
+                    <a class="brand-logo center">Passwords</a>
+                </div>
+            </nav>
+        </div>
+        <div class="container col s12">
+            <div class="row">
+                <br>
+                <h4 class="center col s12">Oops... You aren't signed in</h4>
+            </div>
+            <div class="row">
+                <br>
+                <a href="/register" class="col s12 btn waves-effect waves-lighten black">
+                    <i class="material-icons left">account_circle</i>
+                    Register
+                </a>
+            </div>
+            <div class="row">
+                <br>
+                <a href="/login" class="col s12 btn waves-effect waves-lighten black">
+                    <i class="material-icons left">person</i>
+                    Log In
+                </a>
+            </div>
+        </div>
+    </body>
+</html>
